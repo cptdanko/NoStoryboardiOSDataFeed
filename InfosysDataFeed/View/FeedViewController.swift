@@ -67,8 +67,10 @@ extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.cellIdentifier) as! FeedTableViewCell
         let feedAtRow = viewModel.data[indexPath.row]
-        print(feedAtRow.description)
-        print(feedAtRow.title)
+        cell.feed = feedAtRow
+        //cell.feed = feedAtRow
+        //print(feedAtRow.description)
+        //print(feedAtRow.title)
         return cell
     }
     

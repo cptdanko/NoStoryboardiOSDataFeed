@@ -18,6 +18,8 @@
 		C65F4C3F24404FE00049136C /* FeedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F4C3D24404FE00049136C /* FeedAPI.swift */; };
 		C65F4C44244094490049136C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F4C43244094490049136C /* FeedViewController.swift */; };
 		C65F4C45244094490049136C /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F4C43244094490049136C /* FeedViewController.swift */; };
+		C65F4C472440AE520049136C /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F4C462440AE520049136C /* ImageHelper.swift */; };
+		C65F4C482440AE520049136C /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F4C462440AE520049136C /* ImageHelper.swift */; };
 		C6815FE8243EB8080059702B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6815FE7243EB8080059702B /* AppDelegate.swift */; };
 		C6815FEA243EB8080059702B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6815FE9243EB8080059702B /* SceneDelegate.swift */; };
 		C6815FF1243EB8090059702B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6815FF0243EB8090059702B /* Assets.xcassets */; };
@@ -52,6 +54,7 @@
 		C65F4C3A24404ED60049136C /* APIFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFactory.swift; sourceTree = "<group>"; };
 		C65F4C3D24404FE00049136C /* FeedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPI.swift; sourceTree = "<group>"; };
 		C65F4C43244094490049136C /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		C65F4C462440AE520049136C /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		C6815FE4243EB8080059702B /* InfosysDataFeed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfosysDataFeed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6815FE7243EB8080059702B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6815FE9243EB8080059702B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +98,14 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		C65F4C492440AE560049136C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C65F4C462440AE520049136C /* ImageHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		C6815FDB243EB8080059702B = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +128,7 @@
 		C6815FE6243EB8080059702B /* InfosysDataFeed */ = {
 			isa = PBXGroup;
 			children = (
+				C65F4C492440AE560049136C /* Helpers */,
 				C65F4C33244043930049136C /* Utility */,
 				C6816018243F063C0059702B /* Network */,
 				C6816014243EFEA00059702B /* View */,
@@ -285,6 +297,7 @@
 				C65F4C3E24404FE00049136C /* FeedAPI.swift in Sources */,
 				C681600A243EBC680059702B /* BlueViewController.swift in Sources */,
 				C6815FEA243EB8080059702B /* SceneDelegate.swift in Sources */,
+				C65F4C472440AE520049136C /* ImageHelper.swift in Sources */,
 				C681601A243F06520059702B /* FactsAPI.swift in Sources */,
 				C681600E243EE0850059702B /* FeedTableViewCell.swift in Sources */,
 				C65F4C44244094490049136C /* FeedViewController.swift in Sources */,
@@ -307,6 +320,7 @@
 				C6815FFF243EB8090059702B /* InfosysDataFeedTests.swift in Sources */,
 				C65F4C3924404B840049136C /* MockData.swift in Sources */,
 				C65F4C3C24404ED60049136C /* APIFactory.swift in Sources */,
+				C65F4C482440AE520049136C /* ImageHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
