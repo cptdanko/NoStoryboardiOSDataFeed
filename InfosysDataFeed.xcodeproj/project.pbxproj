@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C636EB212441F63600985AE1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636EB202441F63600985AE1 /* UIView.swift */; };
 		C65F4C32244042D50049136C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C65F4C31244042D50049136C /* README.md */; };
 		C65F4C35244043AA0049136C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F4C34244043AA0049136C /* Constants.swift */; };
 		C65F4C36244043AA0049136C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F4C34244043AA0049136C /* Constants.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C636EB202441F63600985AE1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C65F4C31244042D50049136C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C65F4C34244043AA0049136C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C65F4C3724404B840049136C /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -91,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C636EB1F2441F62600985AE1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C636EB202441F63600985AE1 /* UIView.swift */,
+				C697F22E244199AF0031CACC /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C65F4C33244043930049136C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				C65F4C462440AE520049136C /* ImageHelper.swift */,
-				C697F22E244199AF0031CACC /* Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -131,6 +141,7 @@
 		C6815FE6243EB8080059702B /* InfosysDataFeed */ = {
 			isa = PBXGroup;
 			children = (
+				C636EB1F2441F62600985AE1 /* Extensions */,
 				C65F4C492440AE560049136C /* Helpers */,
 				C65F4C33244043930049136C /* Utility */,
 				C6816018243F063C0059702B /* Network */,
@@ -302,6 +313,7 @@
 				C6815FEA243EB8080059702B /* SceneDelegate.swift in Sources */,
 				C65F4C472440AE520049136C /* ImageHelper.swift in Sources */,
 				C681601A243F06520059702B /* FactsAPI.swift in Sources */,
+				C636EB212441F63600985AE1 /* UIView.swift in Sources */,
 				C681600E243EE0850059702B /* FeedTableViewCell.swift in Sources */,
 				C65F4C44244094490049136C /* FeedViewController.swift in Sources */,
 				C65F4C35244043AA0049136C /* Constants.swift in Sources */,
@@ -471,6 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PJ7D9UDY3B;
 				INFOPLIST_FILE = InfosysDataFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,6 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PJ7D9UDY3B;
 				INFOPLIST_FILE = InfosysDataFeed/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

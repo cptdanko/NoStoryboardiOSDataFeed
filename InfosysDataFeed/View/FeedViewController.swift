@@ -20,7 +20,9 @@ class FeedViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         viewModel = FeedViewModel(parentController: self)
-        self.navigationItem.title = "Back"
+        //update the title dynamically based on the info fetched from the
+        //API call
+        self.navigationItem.title = "Fact Feed"
         //setupUI()
     }
     
@@ -71,8 +73,19 @@ extension FeedViewController: UITableViewDataSource {
         cell.titleLbl.text = feedAtRow.title
         cell.feedDescription.text = feedAtRow.description
         cell.feed = feedAtRow
-        //tableView.beginUpdates()
-        //tableView.endUpdates()
+        cell.feedImgView.addActivityIndicator()
+        DispatchQueue.main.async {
+            if let urlStr = feedAtRow.imageHref {
+                let url = URL(string: urlStr)
+                if let data = try? Data(contentsOf: url!) {
+                    cell.feedImgView.image = UIImage(data: data)
+                    cell.feedImgView.removeIndicatorOnLoad()
+                } else {
+                    cell.feedImgView.removeIndicatorOnLoad()
+                    cell.feedImgView.image = UIImage(named: "defaultPhoto")
+                }
+            }
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -8,6 +8,12 @@
 
 import UIKit
 
+/*
+ A Custom UITableViewCell to display feed data
+ TODO: right now, we are bypassing the Apple's
+ ATS to load an image for the cells. Should we
+ really be doing this?
+ */
 class FeedTableViewCell: UITableViewCell {
     
     static let cellIdentifier = "FEED_CELL"
@@ -15,7 +21,11 @@ class FeedTableViewCell: UITableViewCell {
     var titleLbl = UILabel()
     var feedDescription = UILabel()
     var feedImgView = UIImageView()
-    //keep it here for reference purposes
+    /*
+     keep it here for reference purpose
+     one other option could be to initialise the
+     above values using the didSet observer
+    */
     var feed:Feed!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -28,17 +38,14 @@ class FeedTableViewCell: UITableViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-    
     /*
-     11/04/20: 3:52
-     */
+     Init the UI with auto-layout constraints
+    */
     private func setupUI() {
         titleLbl.translatesAutoresizingMaskIntoConstraints = false
         feedDescription.translatesAutoresizingMaskIntoConstraints = false
         feedImgView.translatesAutoresizingMaskIntoConstraints = false
-        
         contentView.addSubview(titleLbl)
         contentView.addSubview(feedDescription)
         contentView.addSubview(feedImgView)
@@ -47,6 +54,7 @@ class FeedTableViewCell: UITableViewCell {
         titleLbl.textColor = .brown
         feedDescription.font = .systemFont(ofSize: 15)
         feedDescription.numberOfLines = 0
+        feedImgView.contentMode = .scaleAspectFit
         let marginGuide = contentView.layoutMarginsGuide
         //feedImgView.leadingAnchor.constraint(greaterThanOrEqualTo: marginGuide.leadingAnchor, constant: CGFloat(20x))
         
@@ -80,11 +88,4 @@ class FeedTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
-
 }
-/*
- feedDescription.topAnchor.constraint(greaterThanOrEqualTo: titleLbl.bottomAnchor, constant: 8),
- feedDescription.leadingAnchor.constraint(equalTo: feedImgView.trailingAnchor, constant: 8),
- feedDescription.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5)
-
- */
