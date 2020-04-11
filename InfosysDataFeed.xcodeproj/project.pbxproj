@@ -25,8 +25,8 @@
 		C6815FF1243EB8090059702B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6815FF0243EB8090059702B /* Assets.xcassets */; };
 		C6815FF4243EB8090059702B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6815FF2243EB8090059702B /* LaunchScreen.storyboard */; };
 		C6815FFF243EB8090059702B /* InfosysDataFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6815FFE243EB8090059702B /* InfosysDataFeedTests.swift */; };
-		C681600A243EBC680059702B /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816009243EBC680059702B /* BlueViewController.swift */; };
-		C681600B243EBC680059702B /* BlueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816009243EBC680059702B /* BlueViewController.swift */; };
+		C681600A243EBC680059702B /* LayoutTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816009243EBC680059702B /* LayoutTestController.swift */; };
+		C681600B243EBC680059702B /* LayoutTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816009243EBC680059702B /* LayoutTestController.swift */; };
 		C681600E243EE0850059702B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C681600D243EE0850059702B /* FeedTableViewCell.swift */; };
 		C681600F243EE0850059702B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C681600D243EE0850059702B /* FeedTableViewCell.swift */; };
 		C6816012243EE2A30059702B /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816011243EE2A30059702B /* Feed.swift */; };
@@ -64,7 +64,7 @@
 		C6815FFA243EB8090059702B /* InfosysDataFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfosysDataFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6815FFE243EB8090059702B /* InfosysDataFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosysDataFeedTests.swift; sourceTree = "<group>"; };
 		C6816000243EB8090059702B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6816009243EBC680059702B /* BlueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueViewController.swift; sourceTree = "<group>"; };
+		C6816009243EBC680059702B /* LayoutTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestController.swift; sourceTree = "<group>"; };
 		C681600D243EE0850059702B /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		C6816011243EE2A30059702B /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
 		C6816015243F00E40059702B /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
@@ -139,7 +139,7 @@
 				C6815FF0243EB8090059702B /* Assets.xcassets */,
 				C6815FF2243EB8090059702B /* LaunchScreen.storyboard */,
 				C6815FF5243EB8090059702B /* Info.plist */,
-				C6816009243EBC680059702B /* BlueViewController.swift */,
+				C6816009243EBC680059702B /* LayoutTestController.swift */,
 			);
 			path = InfosysDataFeed;
 			sourceTree = "<group>";
@@ -295,7 +295,7 @@
 				C65F4C3B24404ED60049136C /* APIFactory.swift in Sources */,
 				C6815FE8243EB8080059702B /* AppDelegate.swift in Sources */,
 				C65F4C3E24404FE00049136C /* FeedAPI.swift in Sources */,
-				C681600A243EBC680059702B /* BlueViewController.swift in Sources */,
+				C681600A243EBC680059702B /* LayoutTestController.swift in Sources */,
 				C6815FEA243EB8080059702B /* SceneDelegate.swift in Sources */,
 				C65F4C472440AE520049136C /* ImageHelper.swift in Sources */,
 				C681601A243F06520059702B /* FactsAPI.swift in Sources */,
@@ -311,7 +311,7 @@
 			files = (
 				C681601B243F06520059702B /* FactsAPI.swift in Sources */,
 				C6816017243F00E40059702B /* FeedViewModel.swift in Sources */,
-				C681600B243EBC680059702B /* BlueViewController.swift in Sources */,
+				C681600B243EBC680059702B /* LayoutTestController.swift in Sources */,
 				C6816013243EE2A30059702B /* Feed.swift in Sources */,
 				C65F4C3F24404FE00049136C /* FeedAPI.swift in Sources */,
 				C65F4C36244043AA0049136C /* Constants.swift in Sources */,

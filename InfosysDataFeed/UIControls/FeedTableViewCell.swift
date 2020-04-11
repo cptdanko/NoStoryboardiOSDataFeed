@@ -40,7 +40,10 @@ class FeedTableViewCell: UITableViewCell {
         // Initialization code
         setupUI()
     }
-
+    
+    /*
+     11/04/20: 3:52
+     */
     private func setupUI() {
         titleLbl.translatesAutoresizingMaskIntoConstraints = false
         feedDescription.translatesAutoresizingMaskIntoConstraints = false
@@ -54,12 +57,14 @@ class FeedTableViewCell: UITableViewCell {
         titleLbl.textColor = .brown
         feedDescription.font = .systemFont(ofSize: 15)
         feedDescription.numberOfLines = 0
-        
+        print("about to pring layout margins guide bottom anchor")
+        print(layoutMarginsGuide.bottomAnchor)
         let marginGuide = contentView.layoutMarginsGuide
         //feedImgView.leadingAnchor.constraint(greaterThanOrEqualTo: marginGuide.leadingAnchor, constant: CGFloat(20x))
         let imgWidth = CGFloat(60)
         let imgHeight = CGFloat(80)
         
+        //the constant values are just arbiratary numbers
         NSLayoutConstraint.activate([
             //feed image
             feedImgView.widthAnchor.constraint(equalToConstant: imgWidth),
@@ -75,16 +80,16 @@ class FeedTableViewCell: UITableViewCell {
             feedDescription.topAnchor.constraint(greaterThanOrEqualTo: titleLbl.bottomAnchor, constant: 8),
             feedDescription.leadingAnchor.constraint(equalTo: feedImgView.trailingAnchor, constant: 8),
             feedDescription.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5),
-            feedDescription.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: 5)
+            //feedDescription.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: 5)
         ])
-        debugBorderColor(view: titleLbl, color: .blue)
-        debugBorderColor(view: feedDescription, color: .red)
+        //addBorderAround(view: titleLbl, color: .blue)
+        //addBorderAround(view: feedDescription, color: .red)
     }
-    //add border color around UIElements to
-    //help in debugging
-    private func debugBorderColor(view: UIView, color: UIColor) {
+    //add border color around UIElements to help in
+    //debugging when working with auto-layout programmatically
+    private func addBorderAround(view: UIView, color: UIColor) {
         view.layer.borderColor = color.cgColor
-        view.layer.borderWidth = 2.0
+        view.layer.borderWidth = 1.0
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

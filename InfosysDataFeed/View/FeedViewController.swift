@@ -49,7 +49,6 @@ class FeedViewController: UIViewController {
         //tableView.estimatedRowHeight = 600
         
         tableView.dataSource = self
-        tableView.allowsSelection = false
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.cellIdentifier)
     }
 }
@@ -69,10 +68,16 @@ extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.cellIdentifier) as! FeedTableViewCell
         let feedAtRow = viewModel.data[indexPath.row]
+        cell.titleLbl.text = feedAtRow.title
+        cell.feedDescription.numberOfLines = 0
+        cell.feedDescription.text = feedAtRow.description
+        //cell.feed = feedAtRow
         tableView.beginUpdates()
-        cell.feed = feedAtRow
         tableView.endUpdates()
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
