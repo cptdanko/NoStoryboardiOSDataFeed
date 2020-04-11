@@ -18,7 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
         window?.windowScene = windowScene
-        let vc = LayoutTestController()
+        let vc = FeedViewController()
         let navigationVC = UINavigationController(rootViewController: vc)
         window?.rootViewController = navigationVC
         window?.makeKeyAndVisible()

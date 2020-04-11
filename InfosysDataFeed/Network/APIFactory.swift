@@ -11,10 +11,13 @@ enum FEED_API {
 }
 
 import Foundation
+
 class APIFactory {
     
     public let shared = APIFactory()
-    
+    /*
+     A static class that accepts a 
+     */
     static func getFeedsAPI(apiType: FEED_API) -> FeedAPI {
         var defaultAPI: FeedAPI = FactsAPI()
         switch apiType {

@@ -69,11 +69,10 @@ extension FeedViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.cellIdentifier) as! FeedTableViewCell
         let feedAtRow = viewModel.data[indexPath.row]
         cell.titleLbl.text = feedAtRow.title
-        cell.feedDescription.numberOfLines = 0
         cell.feedDescription.text = feedAtRow.description
-        //cell.feed = feedAtRow
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        cell.feed = feedAtRow
+        //tableView.beginUpdates()
+        //tableView.endUpdates()
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
