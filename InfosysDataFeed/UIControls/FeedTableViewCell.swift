@@ -21,7 +21,6 @@ class FeedTableViewCell: UITableViewCell {
         didSet {
             DispatchQueue.main.async {
                 self.titleLbl.text = self.feed.title
-                print(self.feed.description)
                 self.feedDescription.text = self.feed.description
             }
             
@@ -53,16 +52,18 @@ class FeedTableViewCell: UITableViewCell {
         
         titleLbl.font = .boldSystemFont(ofSize: 17)
         titleLbl.textColor = .brown
-        feedDescription.textColor = .gray
-        feedDescription.font = .boldSystemFont(ofSize: 16)
-        feedDescription.numberOfLines = 3
+        feedDescription.font = .systemFont(ofSize: 15)
+        feedDescription.numberOfLines = 0
         
         let marginGuide = contentView.layoutMarginsGuide
         //feedImgView.leadingAnchor.constraint(greaterThanOrEqualTo: marginGuide.leadingAnchor, constant: CGFloat(20x))
+        let imgWidth = CGFloat(60)
+        let imgHeight = CGFloat(80)
+        
         NSLayoutConstraint.activate([
             //feed image
-            feedImgView.widthAnchor.constraint(equalToConstant: 60),
-            feedImgView.heightAnchor.constraint(equalToConstant: 80),
+            feedImgView.widthAnchor.constraint(equalToConstant: imgWidth),
+            feedImgView.heightAnchor.constraint(equalToConstant: imgHeight),
             feedImgView.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor),
             feedImgView.topAnchor.constraint(equalTo: marginGuide.topAnchor),
             feedImgView.bottomAnchor.constraint(lessThanOrEqualTo: marginGuide.bottomAnchor),
@@ -70,11 +71,20 @@ class FeedTableViewCell: UITableViewCell {
             titleLbl.topAnchor.constraint(equalTo: marginGuide.topAnchor),
             titleLbl.leadingAnchor.constraint(equalTo: feedImgView.trailingAnchor, constant: 8),
             titleLbl.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5),
-            // feed description
+            //feed description constraints
             feedDescription.topAnchor.constraint(greaterThanOrEqualTo: titleLbl.bottomAnchor, constant: 8),
             feedDescription.leadingAnchor.constraint(equalTo: feedImgView.trailingAnchor, constant: 8),
-            feedDescription.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5)
-            ])
+            feedDescription.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5),
+            feedDescription.bottomAnchor.constraint(equalTo: marginGuide.bottomAnchor, constant: 5)
+        ])
+        debugBorderColor(view: titleLbl, color: .blue)
+        debugBorderColor(view: feedDescription, color: .red)
+    }
+    //add border color around UIElements to
+    //help in debugging
+    private func debugBorderColor(view: UIView, color: UIColor) {
+        view.layer.borderColor = color.cgColor
+        view.layer.borderWidth = 2.0
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -82,3 +92,9 @@ class FeedTableViewCell: UITableViewCell {
     }
 
 }
+/*
+ feedDescription.topAnchor.constraint(greaterThanOrEqualTo: titleLbl.bottomAnchor, constant: 8),
+ feedDescription.leadingAnchor.constraint(equalTo: feedImgView.trailingAnchor, constant: 8),
+ feedDescription.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor, constant: 5)
+
+ */

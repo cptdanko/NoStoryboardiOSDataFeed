@@ -44,9 +44,7 @@ class FeedViewModel {
                 //show an error message
             }
             if let f = facts {
-                print(f.count)
                 self.data = f
-                print(self.hostVC)
             }
         }
     }

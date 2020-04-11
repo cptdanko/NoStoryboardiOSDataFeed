@@ -17,9 +17,11 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .magenta
         tableView = UITableView()
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 600
         viewModel = FeedViewModel(parentController: self)
         self.navigationItem.title = "Back"
-        //get the fact Feed
+        //setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,8 +45,8 @@ class FeedViewController: UIViewController {
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: CGFloat(50)).isActive = true
         
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 50
+        //tableView.rowHeight = UITableView.automaticDimension
+        //tableView.estimatedRowHeight = 600
         
         tableView.dataSource = self
         tableView.allowsSelection = false
@@ -67,11 +69,16 @@ extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.cellIdentifier) as! FeedTableViewCell
         let feedAtRow = viewModel.data[indexPath.row]
+        tableView.beginUpdates()
         cell.feed = feedAtRow
-        //cell.feed = feedAtRow
-        //print(feedAtRow.description)
-        //print(feedAtRow.title)
+        tableView.endUpdates()
         return cell
     }
+}
+
+extension FeedViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //refresh the table height
+    }
 }
