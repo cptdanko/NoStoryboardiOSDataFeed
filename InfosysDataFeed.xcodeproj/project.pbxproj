@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		80C1AFCB4DB626EB5166F01A /* Pods_InfosysDataFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A998F07C12CC6A3C5F435882 /* Pods_InfosysDataFeed.framework */; };
+		AF9C63594B84D576D46F883E /* Pods_InfosysDataFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE9668D300FC46541D26B6B /* Pods_InfosysDataFeedTests.framework */; };
 		C636EB212441F63600985AE1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636EB202441F63600985AE1 /* UIView.swift */; };
 		C65F4C32244042D50049136C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C65F4C31244042D50049136C /* README.md */; };
 		C65F4C35244043AA0049136C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65F4C34244043AA0049136C /* Constants.swift */; };
@@ -50,6 +52,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03275B892CA1143DE5FD326A /* Pods-InfosysDataFeed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfosysDataFeed.release.xcconfig"; path = "Target Support Files/Pods-InfosysDataFeed/Pods-InfosysDataFeed.release.xcconfig"; sourceTree = "<group>"; };
+		2AE9668D300FC46541D26B6B /* Pods_InfosysDataFeedTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfosysDataFeedTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BD552B7AA0BEA63CA87B351 /* Pods-InfosysDataFeedTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfosysDataFeedTests.release.xcconfig"; path = "Target Support Files/Pods-InfosysDataFeedTests/Pods-InfosysDataFeedTests.release.xcconfig"; sourceTree = "<group>"; };
+		7DDFEAA7DF8431F88A3DFE7B /* Pods-InfosysDataFeed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfosysDataFeed.debug.xcconfig"; path = "Target Support Files/Pods-InfosysDataFeed/Pods-InfosysDataFeed.debug.xcconfig"; sourceTree = "<group>"; };
+		A998F07C12CC6A3C5F435882 /* Pods_InfosysDataFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfosysDataFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCB0482A60F33D4D0AAAF287 /* Pods-InfosysDataFeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfosysDataFeedTests.debug.xcconfig"; path = "Target Support Files/Pods-InfosysDataFeedTests/Pods-InfosysDataFeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C636EB202441F63600985AE1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		C65F4C31244042D50049136C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C65F4C34244043AA0049136C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -80,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80C1AFCB4DB626EB5166F01A /* Pods_InfosysDataFeed.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,12 +96,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9C63594B84D576D46F883E /* Pods_InfosysDataFeedTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23EA111A8E168F0EE31CBA3A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7DDFEAA7DF8431F88A3DFE7B /* Pods-InfosysDataFeed.debug.xcconfig */,
+				03275B892CA1143DE5FD326A /* Pods-InfosysDataFeed.release.xcconfig */,
+				BCB0482A60F33D4D0AAAF287 /* Pods-InfosysDataFeedTests.debug.xcconfig */,
+				2BD552B7AA0BEA63CA87B351 /* Pods-InfosysDataFeedTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C636EB1F2441F62600985AE1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +147,8 @@
 				C6815FE6243EB8080059702B /* InfosysDataFeed */,
 				C6815FFD243EB8090059702B /* InfosysDataFeedTests */,
 				C6815FE5243EB8080059702B /* Products */,
+				23EA111A8E168F0EE31CBA3A /* Pods */,
+				F0930C1A3994BC194C821EF3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +225,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		F0930C1A3994BC194C821EF3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A998F07C12CC6A3C5F435882 /* Pods_InfosysDataFeed.framework */,
+				2AE9668D300FC46541D26B6B /* Pods_InfosysDataFeedTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6816003243EB8090059702B /* Build configuration list for PBXNativeTarget "InfosysDataFeed" */;
 			buildPhases = (
+				782EF96B58D2B2829510E60C /* [CP] Check Pods Manifest.lock */,
 				C6815FE0243EB8080059702B /* Sources */,
 				C6815FE1243EB8080059702B /* Frameworks */,
 				C6815FE2243EB8080059702B /* Resources */,
+				0DA3259C9A5CB890E2DE6ED8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -226,6 +260,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C6816006243EB8090059702B /* Build configuration list for PBXNativeTarget "InfosysDataFeedTests" */;
 			buildPhases = (
+				5383545B56684000CCEAF8ED /* [CP] Check Pods Manifest.lock */,
 				C6815FF6243EB8090059702B /* Sources */,
 				C6815FF7243EB8090059702B /* Frameworks */,
 				C6815FF8243EB8090059702B /* Resources */,
@@ -297,6 +332,70 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0DA3259C9A5CB890E2DE6ED8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InfosysDataFeed/Pods-InfosysDataFeed-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-InfosysDataFeed/Pods-InfosysDataFeed-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InfosysDataFeed/Pods-InfosysDataFeed-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5383545B56684000CCEAF8ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InfosysDataFeedTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		782EF96B58D2B2829510E60C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InfosysDataFeed-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C6815FE0243EB8080059702B /* Sources */ = {
@@ -478,12 +577,13 @@
 		};
 		C6816004243EB8090059702B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DDFEAA7DF8431F88A3DFE7B /* Pods-InfosysDataFeed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PJ7D9UDY3B;
 				INFOPLIST_FILE = InfosysDataFeed/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,12 +597,13 @@
 		};
 		C6816005243EB8090059702B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03275B892CA1143DE5FD326A /* Pods-InfosysDataFeed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PJ7D9UDY3B;
 				INFOPLIST_FILE = InfosysDataFeed/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,6 +617,7 @@
 		};
 		C6816007243EB8090059702B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCB0482A60F33D4D0AAAF287 /* Pods-InfosysDataFeedTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,6 +640,7 @@
 		};
 		C6816008243EB8090059702B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BD552B7AA0BEA63CA87B351 /* Pods-InfosysDataFeedTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class FeedViewController: UIViewController {
 
@@ -66,7 +67,10 @@ extension FeedViewController: UITableViewDataSource {
         print(section)
         return viewModel.numberOfRows(in: section)
     }
-    
+    /*
+     Now loading the images using SDWebImage as it does all the heavy lifting for us
+     i.e. adding the bit about asynchoronous image data fetching etc
+     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.cellIdentifier) as! FeedTableViewCell
         let feedAtRow = viewModel.data[indexPath.row]
@@ -74,7 +78,15 @@ extension FeedViewController: UITableViewDataSource {
         cell.feedDescription.text = feedAtRow.description
         cell.feed = feedAtRow
         cell.feedImgView.addActivityIndicator()
-        DispatchQueue.main.async {
+        if let urlStr = feedAtRow.imageHref {
+            let url = URL(string: urlStr)
+            cell.feedImgView.sd_setImage(with: url, placeholderImage: UIImage(named: "defaultPhoto")) { (img, error, cacheType, url) in
+                cell.feedImgView.removeIndicatorOnLoad()
+            }
+        } else {
+            cell.feedImgView.image = UIImage(named: "defaultPhoto")
+        }
+        /*DispatchQueue.main.async {
             if let urlStr = feedAtRow.imageHref {
                 let url = URL(string: urlStr)
                 if let data = try? Data(contentsOf: url!) {
@@ -85,7 +97,7 @@ extension FeedViewController: UITableViewDataSource {
                     cell.feedImgView.image = UIImage(named: "defaultPhoto")
                 }
             }
-        }
+        }*/
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
