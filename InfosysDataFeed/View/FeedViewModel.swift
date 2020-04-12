@@ -37,6 +37,10 @@ class FeedViewModel {
         }
         return totalSections
     }
+    @objc func refreshFeed() {
+        print("view model refresh feed")
+        getFactsData(from: CONSTANTS.DEFAULT_FACTS_URL)
+    }
     func getFactsData(from extUrl: String) {
         feed.getFeed(url: extUrl) { (facts: [Feed]?, err: Error?)  in
             if err != nil {
@@ -45,7 +49,9 @@ class FeedViewModel {
             }
             if let f = facts {
                 self.data = f
+                self.hostVC?.reloadData()
             }
+            
         }
     }
 }

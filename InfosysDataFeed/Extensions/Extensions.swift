@@ -8,6 +8,10 @@
 
 import Foundation
 import UIKit
+/*
+ These extensions were used before SDWebImage was added to the project
+ mostly redundant code
+ */
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
         contentMode = mode

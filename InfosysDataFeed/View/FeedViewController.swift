@@ -13,6 +13,7 @@ class FeedViewController: UIViewController {
 
     var tableView: UITableView!
     var viewModel: FeedViewModel!
+    @objc var refreshFeed: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,7 @@ class FeedViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         setupUI()
-        viewModel.getFactsData(from: CONSTANTS.FACTS_URL)
+        viewModel.getFactsData(from: CONSTANTS.DEFAULT_FACTS_URL)
     }
     /*
      Setup basic initial UI, add the UIControls to
@@ -48,12 +49,23 @@ class FeedViewController: UIViewController {
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: CGFloat(50)).isActive = true
         
+        //add the UIRefreshControl to the UITableView
+        refreshFeed = UIRefreshControl()
+        let test = FeedViewModel(parentController: self)
+        refreshFeed.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
+        tableView.refreshControl = refreshFeed
+        
         //tableView.rowHeight = UITableView.automaticDimension
         //tableView.estimatedRowHeight = 600
         
         tableView.dataSource = self
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.cellIdentifier)
     }
+    @objc func handleRefreshControl() {
+        print("FeedViewController.handleRefreshControl called")
+        viewModel.refreshFeed()
+    }
+
 }
 /*
  FeedViewController to handle all the UITableView logic
@@ -62,9 +74,12 @@ extension FeedViewController: UITableViewDataSource {
     
     func reloadData() {
         self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.refreshControl?.endRefreshing()
+        }
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(section)
         return viewModel.numberOfRows(in: section)
     }
     /*
@@ -86,18 +101,6 @@ extension FeedViewController: UITableViewDataSource {
         } else {
             cell.feedImgView.image = UIImage(named: "defaultPhoto")
         }
-        /*DispatchQueue.main.async {
-            if let urlStr = feedAtRow.imageHref {
-                let url = URL(string: urlStr)
-                if let data = try? Data(contentsOf: url!) {
-                    cell.feedImgView.image = UIImage(data: data)
-                    cell.feedImgView.removeIndicatorOnLoad()
-                } else {
-                    cell.feedImgView.removeIndicatorOnLoad()
-                    cell.feedImgView.image = UIImage(named: "defaultPhoto")
-                }
-            }
-        }*/
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
