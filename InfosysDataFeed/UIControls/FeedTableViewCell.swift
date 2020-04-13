@@ -26,7 +26,7 @@ class FeedTableViewCell: UITableViewCell {
      one other option could be to initialise the
      above values using the didSet observer
     */
-    var feed:Feed!
+    var feed:FeedItem!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

@@ -11,8 +11,8 @@ import SDWebImage
 
 class FeedViewController: UIViewController {
 
-    var tableView: UITableView!
-    var viewModel: FeedViewModel!
+    fileprivate var tableView: UITableView!
+    fileprivate var viewModel: FeedViewModel!
     @objc var refreshFeed: UIRefreshControl!
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class FeedViewController: UIViewController {
         viewModel = FeedViewModel(parentController: self)
         //update the title dynamically based on the info fetched from the
         //API call
-        self.navigationItem.title = "Fact Feed"
+         //self.navigationItem.title = "Fact Feed"
         //setupUI()
     }
     
@@ -51,21 +51,19 @@ class FeedViewController: UIViewController {
         
         //add the UIRefreshControl to the UITableView
         refreshFeed = UIRefreshControl()
-        let test = FeedViewModel(parentController: self)
         refreshFeed.addTarget(self, action: #selector(handleRefreshControl), for: .valueChanged)
         tableView.refreshControl = refreshFeed
-        
-        //tableView.rowHeight = UITableView.automaticDimension
-        //tableView.estimatedRowHeight = 600
         
         tableView.dataSource = self
         tableView.register(FeedTableViewCell.self, forCellReuseIdentifier: FeedTableViewCell.cellIdentifier)
     }
     @objc func handleRefreshControl() {
-        print("FeedViewController.handleRefreshControl called")
         viewModel.refreshFeed()
     }
-
+    
+    func updateNavigation(title to: String?) {
+        self.navigationItem.title = to
+    }
 }
 /*
  FeedViewController to handle all the UITableView logic
@@ -88,15 +86,19 @@ extension FeedViewController: UITableViewDataSource {
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FeedTableViewCell.cellIdentifier) as! FeedTableViewCell
-        let feedAtRow = viewModel.data[indexPath.row]
-        cell.titleLbl.text = feedAtRow.title
-        cell.feedDescription.text = feedAtRow.description
-        cell.feed = feedAtRow
-        cell.feedImgView.addActivityIndicator()
-        if let urlStr = feedAtRow.imageHref {
-            let url = URL(string: urlStr)
-            cell.feedImgView.sd_setImage(with: url, placeholderImage: UIImage(named: "defaultPhoto")) { (img, error, cacheType, url) in
-                cell.feedImgView.removeIndicatorOnLoad()
+        
+        let dataRow = viewModel.feedArray[indexPath.section]
+        if let dr = dataRow {
+            let feedAtRow = dr[indexPath.row]
+            cell.titleLbl.text = feedAtRow.title
+            cell.feedDescription.text = feedAtRow.description
+            cell.feed = feedAtRow
+            cell.feedImgView.addActivityIndicator()
+            if let urlStr = feedAtRow.imageHref {
+                let url = URL(string: urlStr)
+                cell.feedImgView.sd_setImage(with: url, placeholderImage: UIImage(named: "defaultPhoto")) { (img, error, cacheType, url) in
+                    cell.feedImgView.removeIndicatorOnLoad()
+                }
             }
         } else {
             cell.feedImgView.image = UIImage(named: "defaultPhoto")
@@ -107,10 +109,19 @@ extension FeedViewController: UITableViewDataSource {
         return UITableView.automaticDimension
     }
 }
-
-extension FeedViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //refresh the table height
+/*
+ADDED THESE CODE HERE, AS NOT SURE WHETHER OR NOT
+WE CAN USE SD_WEBIMAGE
+DispatchQueue.main.async {
+    if let urlStr = feedAtRow.imageHref {
+       let url = URL(string: urlStr)
+        if let data = try? Data(contentsOf: url!) {
+            cell.feedImgView.image = UIImage(data: data)
+            cell.feedImgView.removeIndicatorOnLoad()
+        } else {
+            cell.feedImgView.removeIndicatorOnLoad()
+            cell.feedImgView.image = UIImage(named: "defaultPhoto")
+        }
     }
 }
+*/

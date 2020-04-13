@@ -8,10 +8,21 @@
 
 import Foundation
 
+/*
+ An implementation of the FeedAPI protocol that just
+ handles the fetching and the parsing of the FactsAPI
+ */
 class FactsAPI: FeedAPI  {
     
-    
-    func getFeed(url: String, completionHandler: @escaping ([Feed]?, Error?) -> ()) {
-        completionHandler(MockData.factFeed(), nil)
+    func getFeed(url: String, completionHandler: @escaping (Feed?, Error?) -> ()) {
+            
+        if let data = FileIO.readJSONData(from: "facts") {
+            Parser.shared.parse(data: data, type: Feed.self) { (feed, error) in
+                if error != nil {
+                    completionHandler(nil, error)
+                }
+                completionHandler(feed, nil)
+            }
+        }
     }
 }

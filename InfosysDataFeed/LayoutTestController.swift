@@ -17,7 +17,7 @@ import UIKit
 
 class LayoutTestController: UIViewController {
     let reuseID = "CELL"
-    var data = [Feed]()
+    var data = [FeedItem]()
     var tableView = UITableView()
     let extAPI = APIFactory.getFeedsAPI(apiType: .FACT)
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class LayoutTestController: UIViewController {
                 print("fatal error occured")
                 return
             }
-            self.data = feed ?? [Feed]()
+            
             self.tableView.reloadData()
         }
     }
