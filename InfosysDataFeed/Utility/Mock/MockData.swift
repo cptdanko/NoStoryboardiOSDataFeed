@@ -10,10 +10,21 @@ import Foundation
 
 
 class MockData {
-    
-    static func factFeedItems() -> [FeedItem] {
-        var factFeed = [FeedItem]()
         
+    static func feedFromFile(urlStr: String, completionHandler: @escaping (Feed?, Error?) -> ()) {
+        guard let data = FileIO.readJSONData(from: "facts") else {
+            print("Error reading from file")
+            return
+        }
+        Parser.shared.parse(data: data, type: Feed.self) { (feed, error) in
+           if error != nil {
+               completionHandler(nil, error)
+           }
+           completionHandler(feed, nil)
+        }
+    }
+    static func factFeedItems() -> [FeedItem] {
+
         let f1 = FeedItem(title: "Beavers", description: "Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony", imageHref: "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg")
         
         let f2 = FeedItem(title: "Flag", description: nil, imageHref: "http://images.findicons.com/files/icons/662/world_flag/128/flag_of_canada.png")
@@ -22,10 +33,6 @@ class MockData {
         
         let f4 = FeedItem(title: "Hockey Night in Canada", description: "These Saturday night CBC broadcasts originally aired on radio in 1931. In 1952 they debuted on television and continue to unite (and divide) the nation each week.", imageHref: "http://fyimusic.ca/wp-content/uploads/2008/06/hockey-night-in-canada.thumbnail.jpg")
         
-        factFeed.append(f1)
-        factFeed.append(f2)
-        factFeed.append(f3)
-        factFeed.append(f4)
-        return factFeed
+        return [f1, f2, f3, f4]
     }
 }

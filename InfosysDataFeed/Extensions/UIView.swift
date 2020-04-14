@@ -23,7 +23,7 @@ extension UIView {
         activityIndicator.style = UIActivityIndicatorView.Style.gray
         activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.25)
         activityIndicator.startAnimating()
-        self.addSubview(activityIndicator)
+        addSubview(activityIndicator)
     }
     func removeIndicatorOnLoad() {
         for view in subviews {

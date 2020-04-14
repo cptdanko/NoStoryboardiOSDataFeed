@@ -54,11 +54,9 @@ class FeedTableViewCell: UITableViewCell {
         titleLbl.textColor = .brown
         feedDescription.font = .systemFont(ofSize: 15)
         feedDescription.numberOfLines = 0
+        
         feedImgView.contentMode = .scaleAspectFit
         let marginGuide = contentView.layoutMarginsGuide
-        //feedImgView.leadingAnchor.constraint(greaterThanOrEqualTo: marginGuide.leadingAnchor, constant: CGFloat(20x))
-        
-        //feedImgView.leadingAnchor.constraint(equalTo: contentView.bottomAnchor.x)
         //the constant values are just arbiratary numbers
         NSLayoutConstraint.activate([
             //feed image

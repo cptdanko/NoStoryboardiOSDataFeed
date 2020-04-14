@@ -8,8 +8,11 @@
 
 import Foundation
 
+/*
+ Our model to store our feed in this case
+ it's Fact Feed
+ */
 class Feed: Decodable {
     var title: String?
     var rows: [FeedItem]?
-    
 }

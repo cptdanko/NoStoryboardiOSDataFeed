@@ -34,8 +34,6 @@
 		C6815FF1243EB8090059702B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6815FF0243EB8090059702B /* Assets.xcassets */; };
 		C6815FF4243EB8090059702B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6815FF2243EB8090059702B /* LaunchScreen.storyboard */; };
 		C6815FFF243EB8090059702B /* InfosysDataFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6815FFE243EB8090059702B /* InfosysDataFeedTests.swift */; };
-		C681600A243EBC680059702B /* LayoutTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816009243EBC680059702B /* LayoutTestController.swift */; };
-		C681600B243EBC680059702B /* LayoutTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816009243EBC680059702B /* LayoutTestController.swift */; };
 		C681600E243EE0850059702B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C681600D243EE0850059702B /* FeedTableViewCell.swift */; };
 		C681600F243EE0850059702B /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C681600D243EE0850059702B /* FeedTableViewCell.swift */; };
 		C6816012243EE2A30059702B /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816011243EE2A30059702B /* FeedItem.swift */; };
@@ -90,7 +88,6 @@
 		C6815FFA243EB8090059702B /* InfosysDataFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfosysDataFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6815FFE243EB8090059702B /* InfosysDataFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosysDataFeedTests.swift; sourceTree = "<group>"; };
 		C6816000243EB8090059702B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6816009243EBC680059702B /* LayoutTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutTestController.swift; sourceTree = "<group>"; };
 		C681600D243EE0850059702B /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		C6816011243EE2A30059702B /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		C6816015243F00E40059702B /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
@@ -190,13 +187,12 @@
 				C6816018243F063C0059702B /* Network */,
 				C6816014243EFEA00059702B /* View */,
 				C6816010243EE2960059702B /* Model */,
-				C681600C243EE04B0059702B /* UIControls */,
+				C681600C243EE04B0059702B /* UIStructures */,
 				C6815FE7243EB8080059702B /* AppDelegate.swift */,
 				C6815FE9243EB8080059702B /* SceneDelegate.swift */,
 				C6815FF0243EB8090059702B /* Assets.xcassets */,
 				C6815FF2243EB8090059702B /* LaunchScreen.storyboard */,
 				C6815FF5243EB8090059702B /* Info.plist */,
-				C6816009243EBC680059702B /* LayoutTestController.swift */,
 			);
 			path = InfosysDataFeed;
 			sourceTree = "<group>";
@@ -211,12 +207,12 @@
 			path = InfosysDataFeedTests;
 			sourceTree = "<group>";
 		};
-		C681600C243EE04B0059702B /* UIControls */ = {
+		C681600C243EE04B0059702B /* UIStructures */ = {
 			isa = PBXGroup;
 			children = (
 				C681600D243EE0850059702B /* FeedTableViewCell.swift */,
 			);
-			path = UIControls;
+			path = UIStructures;
 			sourceTree = "<group>";
 		};
 		C6816010243EE2960059702B /* Model */ = {
@@ -452,7 +448,6 @@
 				C65F4C3B24404ED60049136C /* APIFactory.swift in Sources */,
 				C6815FE8243EB8080059702B /* AppDelegate.swift in Sources */,
 				C65F4C3E24404FE00049136C /* FeedAPI.swift in Sources */,
-				C681600A243EBC680059702B /* LayoutTestController.swift in Sources */,
 				C6815FEA243EB8080059702B /* SceneDelegate.swift in Sources */,
 				C681601A243F06520059702B /* FactsAPI.swift in Sources */,
 				C68A08E124434F41006E4181 /* Feed.swift in Sources */,
@@ -475,7 +470,6 @@
 				C68A08E224434F41006E4181 /* Feed.swift in Sources */,
 				C66D431424442C1C0050A6CD /* Parser.swift in Sources */,
 				C6816017243F00E40059702B /* FeedViewModel.swift in Sources */,
-				C681600B243EBC680059702B /* LayoutTestController.swift in Sources */,
 				C66D431A2444338F0050A6CD /* FileIO.swift in Sources */,
 				C6816013243EE2A30059702B /* FeedItem.swift in Sources */,
 				C65F4C3F24404FE00049136C /* FeedAPI.swift in Sources */,

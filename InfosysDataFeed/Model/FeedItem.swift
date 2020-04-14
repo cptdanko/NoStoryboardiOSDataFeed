@@ -20,7 +20,9 @@ class FeedItem: Decodable {
         self.description = description
         self.imageHref = imageHref
     }
-    
+    /*
+     MOCK i.e. TEST DATA 
+     */
     static func getMockData() -> [FeedItem] {
         var factFeed = [FeedItem]()
         
