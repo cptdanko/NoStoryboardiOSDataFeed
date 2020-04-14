@@ -146,11 +146,18 @@
 			children = (
 				C68A08DF2443492E006E4181 /* Mock */,
 				C65F4C34244043AA0049136C /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C66D431B244435A60050A6CD /* IO */ = {
+			isa = PBXGroup;
+			children = (
 				C66D431224442C1C0050A6CD /* Parser.swift */,
 				C66D431524442EBC0050A6CD /* Parzieval.swift */,
 				C66D43182444338F0050A6CD /* FileIO.swift */,
 			);
-			path = Utility;
+			path = IO;
 			sourceTree = "<group>";
 		};
 		C6815FDB243EB8080059702B = {
@@ -177,6 +184,7 @@
 		C6815FE6243EB8080059702B /* InfosysDataFeed */ = {
 			isa = PBXGroup;
 			children = (
+				C66D431B244435A60050A6CD /* IO */,
 				C636EB1F2441F62600985AE1 /* Extensions */,
 				C65F4C33244043930049136C /* Utility */,
 				C6816018243F063C0059702B /* Network */,

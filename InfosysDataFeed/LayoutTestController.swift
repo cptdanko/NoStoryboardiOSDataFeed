@@ -36,7 +36,7 @@ class LayoutTestController: UIViewController {
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 50).isActive = true
         self.view = view
-        extAPI.getFeed(url: "") { (feed, error) in
+        extAPI.getFeed(urlStr: "") { (feed, error) in
             if error != nil {
                 print("fatal error occured")
                 return

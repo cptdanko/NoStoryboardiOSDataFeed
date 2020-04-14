@@ -9,7 +9,11 @@
 import Foundation
 
 class FileIO {
-    
+    /*
+     This is a debug method kept in here for testing purposes
+     or to revert to the locally saved file in the event we don't have
+     network access
+     */
     static func readJSONData(from file: String, extension: String = ".json") -> Data? {
         if let path = Bundle.main.path(forResource: "facts", ofType: ".json") {
             do {

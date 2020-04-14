@@ -22,10 +22,6 @@ class FeedViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         viewModel = FeedViewModel(parentController: self)
-        //update the title dynamically based on the info fetched from the
-        //API call
-         //self.navigationItem.title = "Fact Feed"
-        //setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -71,7 +67,7 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDataSource {
     
     func reloadData() {
-        self.tableView.reloadData()
+        tableView.reloadData()
         DispatchQueue.main.async {
             self.tableView.refreshControl?.endRefreshing()
         }

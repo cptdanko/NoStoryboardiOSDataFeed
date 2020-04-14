@@ -47,16 +47,15 @@ class FeedViewModel {
         return totalSections
     }
     @objc func refreshFeed() {
-        print("view model refresh feed")
         getFactsData(from: CONSTANTS.DEFAULT_FACTS_URL)
     }
     func getFactsData(from extUrl: String) {
-        feed.getFeed(url: extUrl) { (facts: Feed?, err: Error?)  in
-            if err != nil {
+        feed.getFeed(urlStr: extUrl) { (facts: Feed?, err: Error?)  in
+            guard let f = facts else {
                 print("Error occured, cannot find Feed")
-                //show an error message
+                return
             }
-            if let f = facts {
+            DispatchQueue.main.async {
                 self.factFeed = f
                 self.hostVC?.reloadData()
                 self.hostVC?.updateNavigation(title: f.title)
