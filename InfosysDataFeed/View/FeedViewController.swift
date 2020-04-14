@@ -11,7 +11,7 @@ import SDWebImage
 
 class FeedViewController: UIViewController {
 
-    fileprivate var tableView: UITableView!
+    var tableView: UITableView!
     fileprivate var viewModel: FeedViewModel!
     @objc var refreshFeed: UIRefreshControl!
     
@@ -19,8 +19,6 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .magenta
         tableView = UITableView()
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 600
         viewModel = FeedViewModel(parentController: self)
     }
     
@@ -107,7 +105,8 @@ extension FeedViewController: UITableViewDataSource {
 }
 /*
 ADDED THESE CODE HERE, AS NOT SURE WHETHER OR NOT
-WE CAN USE SD_WEBIMAGE
+WE CAN USE SD_WEBIMAGE? if not using SD_WEbimage
+the code below can do the trick
 DispatchQueue.main.async {
     if let urlStr = feedAtRow.imageHref {
        let url = URL(string: urlStr)

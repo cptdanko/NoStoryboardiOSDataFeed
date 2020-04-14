@@ -10,8 +10,16 @@ import Foundation
 
 
 class MockData {
-        
-    static func feedFromFile(urlStr: String, completionHandler: @escaping (Feed?, Error?) -> ()) {
+    
+    /* read a file and return Data */
+    static func getDataFromFile(completionHandler: @escaping (_ data: Data?,_ error: Error?) -> ()) {
+        guard let data = FileIO.readJSONData(from: "facts") else {
+            completionHandler(nil, nil)
+            return
+        }
+        completionHandler(data, nil)
+    }
+    static func feedFromFileReadNParse(completionHandler: @escaping (Feed?, Error?) -> ()) {
         guard let data = FileIO.readJSONData(from: "facts") else {
             print("Error reading from file")
             return
@@ -23,7 +31,7 @@ class MockData {
            completionHandler(feed, nil)
         }
     }
-    static func factFeedItems() -> [FeedItem] {
+    static func dummyData() -> [FeedItem] {
 
         let f1 = FeedItem(title: "Beavers", description: "Beavers are second only to humans in their ability to manipulate and change their environment. They can measure up to 1.3 metres long. A group of beavers is called a colony", imageHref: "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg")
         

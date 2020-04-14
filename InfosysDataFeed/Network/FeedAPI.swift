@@ -9,5 +9,5 @@
 import Foundation
 
 protocol FeedAPI {
-    func getFeed(urlStr: String, completionHandler: @escaping (_ data: Feed?, _ err: Error?) -> ())
+    func getFeed(urlStr: String, completionHandler: @escaping (_ data: Feed?, _ err: ErrorResultType?) -> ())
 }

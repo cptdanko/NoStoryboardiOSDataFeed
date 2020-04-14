@@ -10,6 +10,8 @@
 		80C1AFCB4DB626EB5166F01A /* Pods_InfosysDataFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A998F07C12CC6A3C5F435882 /* Pods_InfosysDataFeed.framework */; };
 		AF9C63594B84D576D46F883E /* Pods_InfosysDataFeedTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AE9668D300FC46541D26B6B /* Pods_InfosysDataFeedTests.framework */; };
 		C636EB212441F63600985AE1 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C636EB202441F63600985AE1 /* UIView.swift */; };
+		C63A2F7B2445E819005A0874 /* FeedModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A2F7A2445E819005A0874 /* FeedModelTests.swift */; };
+		C63A2F7D2445F2EE005A0874 /* DialogHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63A2F7C2445F2EE005A0874 /* DialogHelper.swift */; };
 		C64D9D1324440600008F4D37 /* ErrorResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64D9D1224440600008F4D37 /* ErrorResultType.swift */; };
 		C64D9D1424440600008F4D37 /* ErrorResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64D9D1224440600008F4D37 /* ErrorResultType.swift */; };
 		C65F4C32244042D50049136C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C65F4C31244042D50049136C /* README.md */; };
@@ -44,11 +46,11 @@
 		C681601B243F06520059702B /* FactsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6816019243F06520059702B /* FactsAPI.swift */; };
 		C68A08DA244340E4006E4181 /* facts.json in Resources */ = {isa = PBXBuildFile; fileRef = C68A08D9244340E4006E4181 /* facts.json */; };
 		C68A08DB244340E4006E4181 /* facts.json in Resources */ = {isa = PBXBuildFile; fileRef = C68A08D9244340E4006E4181 /* facts.json */; };
-		C68A08DD2443470D006E4181 /* MockFeedsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A08DC2443470D006E4181 /* MockFeedsService.swift */; };
-		C68A08DE2443470D006E4181 /* MockFeedsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A08DC2443470D006E4181 /* MockFeedsService.swift */; };
 		C68A08E124434F41006E4181 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A08E024434F41006E4181 /* Feed.swift */; };
 		C68A08E224434F41006E4181 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68A08E024434F41006E4181 /* Feed.swift */; };
-		C697F22F244199AF0031CACC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C697F22E244199AF0031CACC /* Extensions.swift */; };
+		C6B096D92445D03F005EC6F2 /* FeedParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B096D72445D03F005EC6F2 /* FeedParserTests.swift */; };
+		C6B096DB2445D77D005EC6F2 /* APITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B096DA2445D77D005EC6F2 /* APITests.swift */; };
+		C6B096DD2445E127005EC6F2 /* FeedVCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B096DC2445E127005EC6F2 /* FeedVCTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		A998F07C12CC6A3C5F435882 /* Pods_InfosysDataFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfosysDataFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCB0482A60F33D4D0AAAF287 /* Pods-InfosysDataFeedTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfosysDataFeedTests.debug.xcconfig"; path = "Target Support Files/Pods-InfosysDataFeedTests/Pods-InfosysDataFeedTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C636EB202441F63600985AE1 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		C63A2F7A2445E819005A0874 /* FeedModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModelTests.swift; sourceTree = "<group>"; };
+		C63A2F7C2445F2EE005A0874 /* DialogHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogHelper.swift; sourceTree = "<group>"; };
 		C64D9D1224440600008F4D37 /* ErrorResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResultType.swift; sourceTree = "<group>"; };
 		C65F4C31244042D50049136C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C65F4C34244043AA0049136C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -93,9 +97,10 @@
 		C6816015243F00E40059702B /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		C6816019243F06520059702B /* FactsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactsAPI.swift; sourceTree = "<group>"; };
 		C68A08D9244340E4006E4181 /* facts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = facts.json; sourceTree = "<group>"; };
-		C68A08DC2443470D006E4181 /* MockFeedsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFeedsService.swift; sourceTree = "<group>"; };
 		C68A08E024434F41006E4181 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
-		C697F22E244199AF0031CACC /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C6B096D72445D03F005EC6F2 /* FeedParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedParserTests.swift; sourceTree = "<group>"; };
+		C6B096DA2445D77D005EC6F2 /* APITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITests.swift; sourceTree = "<group>"; };
+		C6B096DC2445E127005EC6F2 /* FeedVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVCTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				C636EB202441F63600985AE1 /* UIView.swift */,
-				C697F22E244199AF0031CACC /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -143,6 +147,7 @@
 			children = (
 				C68A08DF2443492E006E4181 /* Mock */,
 				C65F4C34244043AA0049136C /* Constants.swift */,
+				C63A2F7C2445F2EE005A0874 /* DialogHelper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -200,9 +205,12 @@
 		C6815FFD243EB8090059702B /* InfosysDataFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				C68A08D82443409A006E4181 /* MockData */,
 				C6815FFE243EB8090059702B /* InfosysDataFeedTests.swift */,
 				C6816000243EB8090059702B /* Info.plist */,
+				C6B096D72445D03F005EC6F2 /* FeedParserTests.swift */,
+				C6B096DA2445D77D005EC6F2 /* APITests.swift */,
+				C6B096DC2445E127005EC6F2 /* FeedVCTests.swift */,
+				C63A2F7A2445E819005A0874 /* FeedModelTests.swift */,
 			);
 			path = InfosysDataFeedTests;
 			sourceTree = "<group>";
@@ -242,14 +250,6 @@
 				C65F4C3D24404FE00049136C /* FeedAPI.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		C68A08D82443409A006E4181 /* MockData */ = {
-			isa = PBXGroup;
-			children = (
-				C68A08DC2443470D006E4181 /* MockFeedsService.swift */,
-			);
-			path = MockData;
 			sourceTree = "<group>";
 		};
 		C68A08DF2443492E006E4181 /* Mock */ = {
@@ -451,13 +451,12 @@
 				C6815FEA243EB8080059702B /* SceneDelegate.swift in Sources */,
 				C681601A243F06520059702B /* FactsAPI.swift in Sources */,
 				C68A08E124434F41006E4181 /* Feed.swift in Sources */,
+				C63A2F7D2445F2EE005A0874 /* DialogHelper.swift in Sources */,
 				C636EB212441F63600985AE1 /* UIView.swift in Sources */,
 				C681600E243EE0850059702B /* FeedTableViewCell.swift in Sources */,
 				C65F4C44244094490049136C /* FeedViewController.swift in Sources */,
 				C66D431324442C1C0050A6CD /* Parser.swift in Sources */,
 				C65F4C35244043AA0049136C /* Constants.swift in Sources */,
-				C68A08DD2443470D006E4181 /* MockFeedsService.swift in Sources */,
-				C697F22F244199AF0031CACC /* Extensions.swift in Sources */,
 				C66D43192444338F0050A6CD /* FileIO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,14 +471,17 @@
 				C6816017243F00E40059702B /* FeedViewModel.swift in Sources */,
 				C66D431A2444338F0050A6CD /* FileIO.swift in Sources */,
 				C6816013243EE2A30059702B /* FeedItem.swift in Sources */,
+				C6B096DD2445E127005EC6F2 /* FeedVCTests.swift in Sources */,
 				C65F4C3F24404FE00049136C /* FeedAPI.swift in Sources */,
 				C65F4C36244043AA0049136C /* Constants.swift in Sources */,
+				C63A2F7B2445E819005A0874 /* FeedModelTests.swift in Sources */,
 				C66D431724442EBC0050A6CD /* Parzieval.swift in Sources */,
+				C6B096D92445D03F005EC6F2 /* FeedParserTests.swift in Sources */,
 				C681600F243EE0850059702B /* FeedTableViewCell.swift in Sources */,
-				C68A08DE2443470D006E4181 /* MockFeedsService.swift in Sources */,
 				C64D9D1424440600008F4D37 /* ErrorResultType.swift in Sources */,
 				C65F4C45244094490049136C /* FeedViewController.swift in Sources */,
 				C6815FFF243EB8090059702B /* InfosysDataFeedTests.swift in Sources */,
+				C6B096DB2445D77D005EC6F2 /* APITests.swift in Sources */,
 				C65F4C3924404B840049136C /* MockData.swift in Sources */,
 				C65F4C3C24404ED60049136C /* APIFactory.swift in Sources */,
 			);

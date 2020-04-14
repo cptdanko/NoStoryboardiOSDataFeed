@@ -8,10 +8,14 @@
 
 import Foundation
 
-class Parser: Prazieval{
+class Parser: Prazieval {
     
     static let shared = Parser()
-    
+    /*
+     We could be decoding any type of class, hence this funciton is generic. So
+     at any point, we can decode (convert) any class T that conforms to the decodable
+     protocol from the given data using the JSONDecoder
+    */
     func parse<T:Decodable>(data: Data, type: T.Type, completionHandler: @escaping (T?, Error?) -> ()) {
         var parsedData: T?
         do {

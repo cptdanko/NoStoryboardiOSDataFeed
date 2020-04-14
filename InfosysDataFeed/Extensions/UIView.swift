@@ -11,21 +11,14 @@ import UIKit
 
 extension UIView {
     
-    func pin(_ parentView: UIView) {
-        translatesAutoresizingMaskIntoConstraints = false
-        topAnchor.constraint(equalTo: parentView.topAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: parentView.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: parentView.trailingAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: parentView.bottomAnchor).isActive = true
-    }
-    func addActivityIndicator() {
+    public func addActivityIndicator() {
         let activityIndicator = UIActivityIndicatorView(frame: self.bounds)
         activityIndicator.style = UIActivityIndicatorView.Style.gray
         activityIndicator.backgroundColor = UIColor(white: 0, alpha: 0.25)
         activityIndicator.startAnimating()
         addSubview(activityIndicator)
     }
-    func removeIndicatorOnLoad() {
+    public func removeIndicatorOnLoad() {
         for view in subviews {
             if let acIndicator =  view as? UIActivityIndicatorView {
                 DispatchQueue.main.async() {

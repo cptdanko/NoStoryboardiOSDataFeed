@@ -37,7 +37,7 @@ class FeedViewModel {
         //initialisaing this here, so we don't need to check
         //for optionals in  number of rows calculation
         feedArray[0] = [FeedItem]()
-        self.hostVC = parentController
+        hostVC = parentController
     }
     func numberOfRows(in section: Int) -> Int {
         var totalSections = 0
@@ -50,9 +50,14 @@ class FeedViewModel {
         getFactsData(from: CONSTANTS.DEFAULT_FACTS_URL)
     }
     func getFactsData(from extUrl: String) {
-        feed.getFeed(urlStr: extUrl) { (facts: Feed?, err: Error?)  in
-            guard let f = facts else {
-                print("Error occured, cannot find Feed")
+        feed.getFeed(urlStr: extUrl) { (_ feed: Feed?, _ errorResultType: ErrorResultType?) in
+            guard let f = feed else {
+                let message = "\(errorResultType?.localizedDescription ?? "")\n could be a network connectivity issue, try pull down to refresh after a few minutes"
+                DispatchQueue.main.async {
+                    let dialog = DialogHelper.shared.getAlert(title: "Feed fetch", message: message, alertActions: nil)
+                    self.hostVC?.present(dialog, animated: true, completion: nil)
+                    print("Error occured, cannot find Feed")
+                }
                 return
             }
             DispatchQueue.main.async {

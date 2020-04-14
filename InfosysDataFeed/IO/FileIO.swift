@@ -10,20 +10,20 @@ import Foundation
 
 class FileIO {
     /*
-     This is a debug method kept in here for testing purposes
+     A debug method kept in here for testing purposes
      or to revert to the locally saved file in the event we don't have
-     network access
+     network access.
      */
-    static func readJSONData(from file: String, extension: String = ".json") -> Data? {
-        if let path = Bundle.main.path(forResource: "facts", ofType: ".json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedRead)
-                return data
-            } catch let error {
-                print("error is -> \(error.localizedDescription)")
-                return nil
-            }
+    static func readJSONData(from file: String, fileExt: String = ".json") -> Data? {
+        guard let path = Bundle.main.path(forResource: "facts", ofType: fileExt) else {
+            fatalError("Unable to read json file")
         }
-        return nil
+        do {
+            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedRead)
+            return data
+        } catch let error {
+            print("error is -> \(error.localizedDescription)")
+            return nil
+        }
     }
 }
