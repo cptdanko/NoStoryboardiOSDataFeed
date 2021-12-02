@@ -1,11 +1,9 @@
 
 ## Welcome to A No Storyboard iOS app
 
-This app shows how to create an iOS app that consumes json data from an external url and displays that in a UITableView. The app doesn't use a storyboard and instead constructs it's entire UI in Swift code.
+This app shows how to create an iOS app that consumes json data from an external url and displays that in a UITableView. The app doesn't use a storyboard and instead constructs it's entire UI in Swift code. This was part of a iOS developer role job interview for Infosys.
 
-### Some properties of it
-
-It has the following properties 
+### Solution details
 
 - it uses NSURLSession to query the external url
 - uses JSONDecoder to parse data into native Swift objects
@@ -19,13 +17,19 @@ It has the following properties
 This project is a little overwhelming for new comers and I fully understand that, hence I have written a more beginner friendly tutorial for creating iOS UI in code [here check it out](https://mydaytodo.com/ios-app-no-storyboard-how-to/).
 
 
-### Support or Contact
-Find it useful? For more useful info, checkout my [blog](https://mydaytodo.com/blog) and if you'd like to support me, you can try one of my [apps](https://mydaytodo.com/apps)
+# More great tutorials and code samples
+Checkout [this blog] for more "how-to" code samples, tutorials and just info on how to solve problems.
 
+If you like what I am doing, you can [buy me a coffee]
+
+Click on the next link for more info on the 13+ year [software engineering career journey] of the author.
+
+[buy me a coffee]: https://www.buymeacoffee.com/bhumansoni
+[this blog]: https://mydaytodo.com/blog/
 
 
 #### No Storyboard iOS app to consume API & show data
-#### Overview
+#### The "tech test" had the following instructions
 
 The purpose of this exercise is to assess candidate developer’s iOS coding knowledge and style. The exercise involves build a “proof of concept” app which consumes a REST service and displays photos with headings and descriptions. The exercise will be evaluated on coding style, understanding of programming concepts, choice of techniques, and also by the developer’s process, as indicated by the trail of git commits.
 
